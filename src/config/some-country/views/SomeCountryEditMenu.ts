@@ -1,12 +1,12 @@
-import { Ticket } from "../../../models/ticket/Ticket";
-import { Menu } from "../../../utils/Menu";
+import { EditMenu } from "../../../views/EditMenu";
 import { SomeCountryTicketController } from "../controllers/SomeCountryTicketController";
+import { SomeCountryTicket } from "../models/SomeCountryTicket";
 import { SomeCountryOnlyCommand } from "./SomeCountryOnlyCommand";
 
-export class SomeCountryEditMenu extends Menu {
-  constructor(ticket: Ticket) {
-    super();
-    const controller = new SomeCountryTicketController(ticket);
+export class SomeCountryEditMenu extends EditMenu<SomeCountryTicketController> {
+
+  constructor(controller: SomeCountryTicketController) {
+    super(controller);
     this.addCommand(new SomeCountryOnlyCommand(controller));
   }
 }

@@ -16,6 +16,14 @@ export class Console {
 			});
 		})
 	}
+	async readString(question: string): Promise<string> {
+		return await new Promise(resolve => {
+			this.rl.question(question, (answer) => {
+				resolve(answer);
+				this.rl.close();
+			});
+		})
+	}
 
 	writeln(string: string = "") {
 		console.log(string);

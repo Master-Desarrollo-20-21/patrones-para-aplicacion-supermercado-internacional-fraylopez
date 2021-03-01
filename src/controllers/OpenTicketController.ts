@@ -5,7 +5,7 @@ export class OpenTicketController {
   constructor(private readonly ticket: Ticket) { }
 
   open() {
-    throw new Error("Method not implemented.");
+    this.ticket.open();
   }
 
   canBeOpened(): boolean {

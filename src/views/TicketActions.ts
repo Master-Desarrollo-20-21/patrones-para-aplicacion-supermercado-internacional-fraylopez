@@ -3,5 +3,9 @@ export enum TicketActions {
   OPEN = "OPEN",
   CLOSE = "CLOSE",
   PRINT = "PRINT",
-  EDIT = "EDIT"
+  EDIT = "EDIT",
+  ADD_LINE = "ADD LINE",
+  ADD_LINE_SALE = "ADD_LINE_SALE",
+  REPEAT_LINE = "REPEAT_LINE",
+  REPEAT_LINE_SALE = "REPEAT_LINE_SALE"
 }

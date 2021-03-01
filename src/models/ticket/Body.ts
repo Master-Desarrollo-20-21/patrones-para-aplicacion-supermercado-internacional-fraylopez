@@ -1,15 +1,13 @@
 import assert from "assert";
-import { ILine } from "./ILine";
-
 
 export class Body {
-  private readonly lines: ILine[];
+  private readonly lines: string[];
 
   constructor() {
     this.lines = [];
   }
 
-  addItem(line: ILine) {
+  addLine(line: string) {
     this.lines.push(line);
   }
 
@@ -23,10 +21,7 @@ export class Body {
     // TODO:
   }
 
-
   render(): string {
-    return this.lines
-      .map(l => l.getText())
-      .join("\n");
+    return this.lines.join("\n");
   }
 }

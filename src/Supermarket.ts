@@ -1,10 +1,16 @@
 import { CountryFactory } from "./CountryFactory";
+import { Ticket } from "./models/ticket/Ticket";
+import { Menu } from "./utils/Menu";
 
 export class Supermarket {
 
   private isOpen!: boolean;
-  constructor(private readonly countryFactory: CountryFactory) {
+  private ticket: Ticket;
+  private menu: Menu;
+  constructor(countryFactory: CountryFactory) {
     this.open();
+    this.ticket = countryFactory.getTicket();
+    this.menu = countryFactory.getMenu(this.ticket);
   }
 
   open() {
@@ -13,10 +19,7 @@ export class Supermarket {
 
   async operate() {
     do {
-      const ticket = this.countryFactory.getTicket();
-      const menu = this.countryFactory.getMenu(ticket);
-      await menu.execute();
-      ticket.close();
+      await this.menu.execute();
     } while (this.isOpen);
   }
 

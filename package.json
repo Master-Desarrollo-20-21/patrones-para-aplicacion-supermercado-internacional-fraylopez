@@ -10,7 +10,5 @@
   },
   "devDependencies": {
     "@types/node": "^14.14.31",
-    "cd": "^0.3.3",
-    "supermarket": "/home/victor/Documents/luis/ejercicios/supermarket"
   }
 }
